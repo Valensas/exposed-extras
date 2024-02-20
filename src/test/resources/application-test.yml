@@ -1,0 +1,10 @@
+spring:
+  application.name: test
+  jackson.time-zone: Europe/Istanbul
+  datasource:
+    username: db_user
+    password: db_pass
+    url: jdbc:postgresql://localhost:5432/exposed_test
+  flyway:
+    baselineOnMigrate: true
+    table: flyway_exposed_test_schema_history
