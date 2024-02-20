@@ -1,3 +1,4 @@
+import org.gradle.jvm.tasks.Jar
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -13,13 +14,12 @@ plugins {
 }
 
 group = "com.valensas"
-version = "0.0.1"
+version = "0.0.2"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
 repositories {
     mavenCentral()
 }
-
 
 dependencies {
     compileOnly("org.springframework.boot:spring-boot-starter-web")
@@ -50,6 +50,10 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.getByName<Jar>("jar") {
+    archiveClassifier = ""
 }
 
 signing {
