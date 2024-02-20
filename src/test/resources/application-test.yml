@@ -2,9 +2,16 @@ spring:
   application.name: test
   jackson.time-zone: Europe/Istanbul
   datasource:
-    username: db_user
-    password: db_pass
-    url: jdbc:postgresql://localhost:5432/exposed_test
+    username: ${database.username}
+    password: ${database.password}
+    url: jdbc:postgresql://${database.host}:${database.port}/${database.name}
   flyway:
     baselineOnMigrate: true
     table: flyway_exposed_test_schema_history
+
+database:
+  host: localhost
+  port: 5432
+  name: exposed_test
+  username: db_user
+  password: db_pass
