@@ -2,19 +2,21 @@ import org.gradle.jvm.tasks.Jar
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "3.2.2"
+    id("org.springframework.boot") version "3.2.4"
     id("io.spring.dependency-management") version "1.1.4"
-    id("org.jmailen.kotlinter") version "4.2.0"
+    id("org.jmailen.kotlinter") version "4.3.0"
     id("maven-publish")
     id("java-library")
     id("jacoco")
-    id("net.thebugmc.gradle.sonatype-central-portal-publisher") version "1.1.1"
+    id("net.thebugmc.gradle.sonatype-central-portal-publisher") version "1.2.3"
+    id("com.github.ben-manes.versions") version "0.51.0"
+
     kotlin("jvm") version "1.9.22"
     kotlin("plugin.spring") version "1.9.22"
 }
 
 group = "com.valensas"
-version = "0.0.2"
+version = "0.0.3"
 java.sourceCompatibility = JavaVersion.VERSION_21
 
 repositories {
@@ -24,9 +26,9 @@ repositories {
 dependencies {
     compileOnly("org.springframework.boot:spring-boot-starter-web")
 
-    api("org.jetbrains.exposed:exposed-spring-boot-starter:0.47.0")
-    api("org.jetbrains.exposed:exposed-java-time:0.47.0")
-    api("org.jetbrains.exposed:exposed-json:0.47.0")
+    api("org.jetbrains.exposed:exposed-spring-boot-starter:0.49.0")
+    api("org.jetbrains.exposed:exposed-java-time:0.49.0")
+    api("org.jetbrains.exposed:exposed-json:0.49.0")
 
     // For vendor specific implementations
     compileOnly("org.postgresql:postgresql")
