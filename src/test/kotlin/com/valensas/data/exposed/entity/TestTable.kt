@@ -44,7 +44,7 @@ object TestTable : AuditableTable<TestRecord, Long, String>(
     ) {
         statement[type] = record.type
         statement[testJson] = record.testJson
-        statement[testArray] = record.integers.toTypedArray()
+        statement[testArray] = record.integers
         statement[testInet] = record.ip
         statement[testInterval] = record.interval
         super.updateRowWithRecord(statement, record)
@@ -56,7 +56,7 @@ object TestTable : AuditableTable<TestRecord, Long, String>(
     ) {
         statement[type] = record.type
         statement[testJson] = record.testJson
-        statement[testArray] = record.integers.toTypedArray()
+        statement[testArray] = record.integers
         statement[testInet] = record.ip
         statement[testInterval] = record.interval
         super.insertRowWithRecord(statement, record)
