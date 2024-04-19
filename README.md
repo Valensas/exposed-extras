@@ -5,7 +5,7 @@ A library that adds extra features to [Exposed](https://github.com/jetbrains/exp
 ## Installation
 
 ```kotlin
-implementation("com.valensas:exposed-extras:0.0.3")
+implementation("com.valensas:exposed-extras:0.1.0")
 ```
 
 ## Usage
